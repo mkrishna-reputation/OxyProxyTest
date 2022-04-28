@@ -16,11 +16,13 @@ public class AhcWebhawkTest {
     public static void main(String[] args) {
         String userName="";
         String password="";
+        String host="";
+        int port=0;
 
         AsyncHttpClient client = new AsyncHttpClient();
         RequestBuilder builder = new RequestBuilder("GET", false);
         builder.setUrl("https://www.judysbook.com/Ferry-Farm-Animal-Clinic-Ltd-BtoB~Veterinary-Services-fredericksburg-va-r28298533.htm");
-        ProxyServer proxyServer = new ProxyServer(ProxyServer.Protocol.HTTP, "dc.pr.oxylabs.io", 10000, userName, password);
+        ProxyServer proxyServer = new ProxyServer(ProxyServer.Protocol.HTTP, host, port, userName, password);
         builder.setProxyServer(proxyServer);
         Request ahcRequest = builder.build();
         ListenableFuture<Response> future = client.executeRequest(ahcRequest);
