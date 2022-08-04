@@ -18,10 +18,11 @@ public class AhcWebhawkTest {
         String password="";
         String host="";
         int port=0;
+        String url="https://uk.hotels.com/ho163974/loews-philadelphia-hotel-philadelphia-united-states/";
 
         AsyncHttpClient client = new AsyncHttpClient();
         RequestBuilder builder = new RequestBuilder("GET", false);
-        builder.setUrl("https://www.judysbook.com/Ferry-Farm-Animal-Clinic-Ltd-BtoB~Veterinary-Services-fredericksburg-va-r28298533.htm");
+        builder.setUrl(url);
         ProxyServer proxyServer = new ProxyServer(ProxyServer.Protocol.HTTP, host, port, userName, password);
         builder.setProxyServer(proxyServer);
         Request ahcRequest = builder.build();
